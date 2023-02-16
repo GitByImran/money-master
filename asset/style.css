@@ -52,6 +52,9 @@ body {
     align-items: center;
     gap: 15px;
 }
+.total-income {
+    text-align: center;
+}
 .total-expenses {
     text-align: center;
 }
@@ -112,10 +115,13 @@ input {
     background: rgb(1, 133, 167);
 }
 
-.input-error-messege {
+#balanceErrorMessege {
     display: none;
     color: red;
-    font-size: 16px;
+}
+#incomeErrorMessege {
+    display: none;
+    color: red;
 }
 
 @media screen and (max-width: 576px) {

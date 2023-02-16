@@ -27,6 +27,7 @@ function getBalance() {
 function getSaving() {
     const income  = getIncome();
     const balance = getBalance();
+    const errorMessege = document.getElementById("balanceErrorMessege");
     const save = document.getElementById("save");
     const saving = (parseFloat(save.value) / 100) * income;
     if (balance === 0) {
@@ -34,11 +35,12 @@ function getSaving() {
     }
     else {
         if (saving > balance) {
-            alert("you have not enough money to save")
             const amountToSave = document.getElementById("total-saving");
             amountToSave.innerText = " $" + 0;
+            errorMessege.style.display = "block";
         }
         else {
+            errorMessege.style.display = "none";
             return saving.toFixed(2);
         }
     }
@@ -59,14 +61,18 @@ function getRestBalance() {
 document.getElementById("total-calculate").addEventListener("click", () => {
     const setTotalExpense = document.getElementById("total-expense");
     const setRestBalance = document.getElementById("rest-balance");
-    if (getExpense() === "NaN") {
+    const errorMessege = document.getElementById("incomeErrorMessege");
+    if (getBalance() === "NaN" || getBalance() === "NaN") {
+        errorMessege.style.display = "block";
         setTotalExpense.innerText = 0;
         setRestBalance.innerText = 0;
     }
     else {
+        errorMessege.style.display = "none";
         setTotalExpense.innerText = " $" + getExpense();
         setRestBalance.innerText = " $" + getBalance();
     }
+    console.log(typeof getBalance());
 })
 
 document.getElementById("total-save").addEventListener("click", () => {
@@ -81,3 +87,4 @@ document.getElementById("total-save").addEventListener("click", () => {
         setRemainBalance.innerText = " $" + getRestBalance();
     }
 })
+
