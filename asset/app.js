@@ -59,13 +59,13 @@ function getRestBalance() {
 document.getElementById("total-calculate").addEventListener("click", () => {
     const setTotalExpense = document.getElementById("total-expense");
     const setRestBalance = document.getElementById("rest-balance");
-    setTotalExpense.innerText = getExpense();
-    setRestBalance.innerText = getBalance();
+    setTotalExpense.innerText = " $" + getExpense();
+    setRestBalance.innerText = " $" + getBalance();
 })
 
 document.getElementById("total-save").addEventListener("click", () => {
     const setTotalSaving = document.getElementById("total-saving");
     const setRemainBalance = document.getElementById("remain-balance");
-    setTotalSaving.innerText = getSaving();
-    setRemainBalance.innerText = getRestBalance();
+    setTotalSaving.innerText = " $" + getSaving();
+    setRemainBalance.innerText = " $" + getRestBalance();
 })
