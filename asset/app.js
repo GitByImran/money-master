@@ -36,7 +36,7 @@ function getSaving() {
         if (saving > balance) {
             alert("you have not enough money to save")
             const amountToSave = document.getElementById("total-saving");
-            amountToSave.innerText = 0;
+            amountToSave.innerText = " $" + 0;
         }
         else {
             return saving;
