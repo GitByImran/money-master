@@ -39,7 +39,7 @@ function getSaving() {
             amountToSave.innerText = " $" + 0;
         }
         else {
-            return saving;
+            return saving.toFixed(2);
         }
     }
 }
@@ -59,13 +59,25 @@ function getRestBalance() {
 document.getElementById("total-calculate").addEventListener("click", () => {
     const setTotalExpense = document.getElementById("total-expense");
     const setRestBalance = document.getElementById("rest-balance");
-    setTotalExpense.innerText = " $" + getExpense();
-    setRestBalance.innerText = " $" + getBalance();
+    if (getExpense() === "NaN") {
+        setTotalExpense.innerText = 0;
+        setRestBalance.innerText = 0;
+    }
+    else {
+        setTotalExpense.innerText = " $" + getExpense();
+        setRestBalance.innerText = " $" + getBalance();
+    }
 })
 
 document.getElementById("total-save").addEventListener("click", () => {
     const setTotalSaving = document.getElementById("total-saving");
     const setRemainBalance = document.getElementById("remain-balance");
-    setTotalSaving.innerText = " $" + getSaving();
-    setRemainBalance.innerText = " $" + getRestBalance();
+    if (getSaving() === "NaN") {
+        setTotalSaving.innerText = 0;
+        setRemainBalance.innerText = 0;
+    }
+    else {
+        setTotalSaving.innerText = " $" + getSaving();
+        setRemainBalance.innerText = " $" + getRestBalance();
+    }
 })
