@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/style.css">
+    <title>money master</title>
+</head>
+<body>
+
+    <nav>
+        <div class="navlogo">money master</div>
+    </nav>
+
+    <main class="main-part">
+        <div class="main-img">
+            <img src="./asset/image/money-master.png" alt="">
+        </div>
+
+        <div class="main-content">
+            <div class="content-title">
+                <h2>Income</h2>
+            </div>
+
+            <div class="content-body">
+
+                <div class="total-income">
+                    <label for="totalIncome">Income</label>
+                    <input type="text" placeholder="৳ amount" id="totalIncome" value="">
+                </div>
+                <div class="content-title">
+                    <h2>Expenses</h2>
+                </div>
+
+                <div class="total-expenses">
+                    <div class="expenses">
+                        <div class="expenseIn">
+                            <label for="food">Food</label>
+                            <input type="text" placeholder="৳ amount" id="food" value="">
+                        </div>
+                        <div class="expenseIn">
+                            <label for="rent">Rent</label>
+                            <input type="text" placeholder="৳ amount" id="rent" value="">
+                        </div>
+                        <div class="expenseIn">
+                            <label for="clothe">Clothe</label>
+                            <input type="text" placeholder="৳ amount" id="clothe" value="">
+                        </div>
+                    </div>
+
+                    <button id="total-calculate">Calculate</button>
+                </div>
+
+                <div class="balance-money">
+                    <p>Total Expense : <span id="total-expense">...</span></p>
+                    <p>Balance : <span id="rest-balance">...</span></p>
+                </div>
+
+                <div class="save-money">
+                    <div class="savings">
+                        <label for="save">Save</label>
+                        <input type="text" placeholder="৳ amount" id="save" value="">
+                        <p>%</p>
+                        <button id="total-save">Save</button>
+                    </div>
+                    <p>Saving Amount : <span id="total-saving">...</span></p>
+                    <p>Remaining Balance : <span id="remain-balance">...</span></p>
+                </div>
+
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="./asset/app.js"></script>
+    
+</body>
+</html>
